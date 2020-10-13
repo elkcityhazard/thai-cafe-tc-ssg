@@ -1,0 +1,7 @@
+_site
+.jekyll-cache
+Gemfile
+Gemfile.lock 
+_data
+node_modules
+*.mp4

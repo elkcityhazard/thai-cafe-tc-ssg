@@ -1,0 +1,6 @@
+li > div.price {
+  height: auto !important;
+  min-height: 75px;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}

@@ -1,0 +1,48 @@
+<a class="button red pdf" href="images/dishes/Menu.pdf" target="_blank"
+  >Download Our PDF Menu</a
+>
+{% for dish in site.data.dishes %}
+<!-- Lunch Menu Template  -->
+<article class="right add-margin">
+  <h2><span>{{dish.category}}</span> Menu</h2>
+  <hr />
+  <hr />
+  <br /><br />
+  <ul class="dishes grid center-content">
+    {% for item in dish.product %}
+    <!--DISH-->
+    <li class="adjust">
+      <div class="circle medium">
+        <figure class="imgLiquidFill">
+          <img src="{{item.src}}" alt="{{item.name}}" />
+        </figure>
+        <div class="shadow"></div>
+        <a href="{{item.url}}">
+          <div class="fill red cart-tip">
+            <img src="images/star-hover.png" alt="star" />
+          </div>
+        </a>
+      </div>
+      <article>
+        <a href="{{item.url}}"><h6>{{item.name}}</h6></a>
+        <ul class="rate stars">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li class="empty"></li>
+        </ul>
+        <p>{{item.description}}</p>
+      </article>
+      <div class="price">
+        {% for price in item.price.lunch %}
+        <p>{{price.name}} {{price.cost}}</p>
+        {% endfor %}
+      </div>
+    </li>
+    <!--/DISH-->
+    {% endfor %}
+  </ul>
+  <div class="cleaner"></div>
+</article>
+{% endfor %}
